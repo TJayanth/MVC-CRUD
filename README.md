@@ -4,7 +4,7 @@ Perform basic CRUD operations in .NET MVC. This project interacts with the Datab
 
 # Setup the Database:
 
-Execute the script MVCCRUD in SQL server. 
+Execute the script MVCCRUD.sql in SQL server. 
 This will create the Employee table with the corressponding fields or create a table with the following query
 
 CREATE TABLE Employee(
