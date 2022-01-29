@@ -48,7 +48,7 @@ pipeline {
          stage('Release'){
            steps{
                echo "Ready for release"
-               archive 'MVCCRUD/bin/Release/**'
+               archiveArtifacts 'MVCCRUD/bin/**'
             }
          }
     }
