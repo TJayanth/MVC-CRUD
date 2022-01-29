@@ -13,7 +13,7 @@ pipeline {
         stage('Restore packages'){
                steps{
                    echo "Restore Package"
-                   bat 'dotnet restore MVCCRUD.sln'
+                   //bat 'dotnet restore MVCCRUD.sln'
                  }
         }
         stage('Clean'){
