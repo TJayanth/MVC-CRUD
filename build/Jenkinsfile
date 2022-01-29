@@ -13,6 +13,7 @@ pipeline {
         stage('Restore packages'){
                steps{
                    echo "Restore Package"
+                    bat "D:\\MSBuild_2019\\MsBuild.exe MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:nugetrestore"
                    //bat 'dotnet restore MVCCRUD.sln'
                  }
         }
