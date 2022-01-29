@@ -57,7 +57,7 @@ pipeline {
          stage('Clean-up'){
              steps{
                  echo "Cleanup"
-                 deleteDir()
+                 //deleteDir()
              }
          }
     }
