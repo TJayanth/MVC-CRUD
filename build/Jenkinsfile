@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo "Start Git Checkout"
                 // Get some code from a GitHub repository
-                git credentialsId: '4edc916e-d436-47bf-a0d8-775199bfa17d', url: 'https://github.com/TJayanth/MVC-CRUD.git'
+                git credentialsId: 'JayanthGitHub', url: 'https://github.com/TJayanth/MVC-CRUD.git'
                 
             }
         }
@@ -18,12 +18,14 @@ pipeline {
         }
         stage('Clean'){
            steps{
-               bat 'dotnet clean MVCCRUD.sln --configuration Release'
+               bat "msbuild.exe ${workspace}\\MVCCRUD.sln /nologo /nr:false /p:platform=\"x64\" /p:configuration=\"release\" /t:clean"
+               //bat 'dotnet clean MVCCRUD.sln --configuration Release'
             }
          }
         stage('Build'){
            steps{
-               bat 'dotnet build MVCCRUD.sln --configuration Release --no-restore'
+               bat "msbuild.exe ${workspace}\\MVCCRUD.sln /nologo /nr:false  /p:platform=\"x64\" /p:configuration=\"release\" /p:PackageCertificateKeyFile=<path-to-certificate-file>.pfx /t:clean;restore;rebuild"
+               //bat 'dotnet build MVCCRUD.sln --configuration Release --no-restore'
             }
          }
 
