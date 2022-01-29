@@ -19,7 +19,7 @@ pipeline {
                 echo "GIT_COMMIT: ${GIT_COMMIT}"
                 echo "GIT_COMMIT: ${GIT_COMMIT}"
                 // Get some code from a GitHub repository
-                 git credentialsId: '4edc916e-d436-47bf-a0d8-775199bfa17d', url: 'https://github.com/TJayanth/MVC-CRUD.git'
+                //  git credentialsId: '4edc916e-d436-47bf-a0d8-775199bfa17d', url: 'https://github.com/TJayanth/MVC-CRUD.git'
                 
             }
         }
@@ -31,14 +31,16 @@ pipeline {
         }
         stage('Clean'){
            steps{
-               bat "\"${tool 'MsBuild'}\"\\MsBuild.exe MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:Clean"
+            //    bat "\"${tool 'MsBuild'}\"\\MsBuild.exe MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:Clean"
+               bat "\"${tool 'MsBuild'}\"\\MsBuild.exe C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvccrud_multibranch_1_master\\MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:Clean"
                
             }
          }
         stage('Build'){
            steps{
                echo "Build"
-               bat "\"${tool 'MsBuild'}\"\\MsBuild.exe MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:Rebuild"
+            //    bat "\"${tool 'MsBuild'}\"\\MsBuild.exe MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:Rebuild"
+               bat "\"${tool 'MsBuild'}\"\\MsBuild.exe C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvccrud_multibranch_1_master\\MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:Rebuild"
                echo "${tool 'MsBuild'}" 
             }
          }
@@ -46,6 +48,7 @@ pipeline {
          stage('Release'){
            steps{
                echo "Ready for release"
+               archive 'MVCCRUD/bin/Release/**'
             }
          }
     }
