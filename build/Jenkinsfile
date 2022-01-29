@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Clean'){
            steps{
-               bat "\"${tool 'MsBuild'}\"\\MsBuild.exe MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:Clean;Rebuild"
+               bat "\"${tool 'MsBuild'}\"\\MsBuild.exe MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:Clean"
             //    bat "D:\\MSBuild_2019\\MsBuild.exe MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:Clean;Rebuild"
             //    bat "D:\\MSBuild_2019\\MsBuild.exe MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:Clean;Rebuild"
                //bat 'dotnet clean MVCCRUD.sln --configuration Release'
@@ -29,6 +29,7 @@ pipeline {
         stage('Build'){
            steps{
                echo "Build"
+               bat "\"${tool 'MsBuild'}\"\\MsBuild.exe MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:Rebuild"
                //bat "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\msbuild.exe MVCCRUD.sln /nologo /nr:false  /p:platform=\"x64\" /p:configuration=\"release\" /p:PackageCertificateKeyFile=<path-to-certificate-file>.pfx /t:clean;restore;rebuild"
                //bat 'dotnet build MVCCRUD.sln --configuration Release --no-restore'
             }
