@@ -9,10 +9,15 @@ pipeline {
                 echo "Branch: ${BRANCH_NAME}"
                 echo "Build Number: ${BUILD_NUMBER}"
                 echo "Build Id: ${BUILD_ID}"
-                echo "Build Display Bane: ${BUILD_DISPLAY_NAME}"
+                echo "Build Display : ${BUILD_DISPLAY_NAME}"
+                echo "Build URL : ${BUILD_URL}"
                 echo "Job Name: ${JOB_NAME}"
                 echo "Build Tag: ${BUILD_TAG}"
                 echo "Node Name: ${NODE_NAME}"
+                echo "GIT_URL: ${GIT_URL}"
+                echo "GIT_BRANCH: ${GIT_BRANCH}"
+                echo "GIT_COMMIT: ${GIT_COMMIT}"
+                echo "GIT_COMMIT: ${GIT_COMMIT}"
                 // Get some code from a GitHub repository
                  git credentialsId: '4edc916e-d436-47bf-a0d8-775199bfa17d', url: 'https://github.com/TJayanth/MVC-CRUD.git'
                 
