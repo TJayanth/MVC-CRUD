@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Clean'){
            steps{
-               bat "C:\\MSBuild_2019\\MsBuild.exe MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" "
+               bat "D:\\MSBuild_2019\\MsBuild.exe MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" "
                //bat 'dotnet clean MVCCRUD.sln --configuration Release'
             }
          }
