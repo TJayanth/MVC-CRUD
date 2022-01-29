@@ -48,7 +48,7 @@ pipeline {
          stage('Release'){
            steps{
                echo "Ready for release"
-               archiveArtifacts artifacts: 'MVCCRUD/bin/*.zip',
+               archiveArtifacts artifacts: '**',
                    allowEmptyArchive: true,
                    fingerprint: true,
                    onlyIfSuccessful: true
