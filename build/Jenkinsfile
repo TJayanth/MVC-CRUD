@@ -17,7 +17,6 @@ pipeline {
                 echo "GIT_URL: ${GIT_URL}"
                 echo "GIT_BRANCH: ${GIT_BRANCH}"
                 echo "GIT_COMMIT: ${GIT_COMMIT}"
-                echo "GIT_COMMIT: ${GIT_COMMIT}"
                 // Get some code from a GitHub repository
                 //  git credentialsId: '4edc916e-d436-47bf-a0d8-775199bfa17d', url: 'https://github.com/TJayanth/MVC-CRUD.git'
                 
