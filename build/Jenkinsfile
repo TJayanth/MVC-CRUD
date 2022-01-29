@@ -14,7 +14,7 @@ pipeline {
                steps{
                    echo "Restore Package"
                     // bat "D:\\MSBuild_2019\\MsBuild.exe MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:nugetrestore"
-                    bat "\"${tool 'MsBuild'}\"\\MsBuild.exe C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvccrud_multibranch_1_master\\MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:nugetrestore"
+                    // bat "\"${tool 'MsBuild'}\"\\MsBuild.exe C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvccrud_multibranch_1_master\\MVCCRUD.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /t:nugetrestore"
                    //bat 'dotnet restore MVCCRUD.sln'
                  }
         }
