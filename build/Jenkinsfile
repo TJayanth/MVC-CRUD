@@ -54,5 +54,11 @@ pipeline {
                    onlyIfSuccessful: true
             }
          }
+         stage('Clean-up'){
+             steps{
+                 echo "Cleanup"
+                 deleteDir()
+             }
+         }
     }
 }
