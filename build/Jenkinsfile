@@ -16,10 +16,21 @@ pipeline {
                    sh 'dotnet restore MVCCRUD.sln'
                  }
         }
-         stage('Build Project'){
-               steps{
-                   echo "TEst"
-                 }
-        }
+        stage('Clean'){
+           steps{
+               sh 'dotnet clean MVCCRUD.sln --configuration Release'
+            }
+         }
+        stage('Build'){
+           steps{
+               sh 'dotnet build MVCCRUD.sln --configuration Release --no-restore'
+            }
+         }
+
+         stage('Release'){
+           steps{
+               echo "Ready for release"
+            }
+         }
     }
 }
