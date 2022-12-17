@@ -55,5 +55,10 @@ namespace MVCCRUD.Controllers
 			}
 		}
 		#endregion
+
+		public void MyChanges()
+		{
+
+		}
 	}
 }
